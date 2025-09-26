@@ -16,4 +16,4 @@ init_db(app)
 app.register_blueprint(games_bp)
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5100) # Port 5100 to avoid macOS conflicts
+    app.run(port=5100) # Port 5100 to avoid macOS conflicts
