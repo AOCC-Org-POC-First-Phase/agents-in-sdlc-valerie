@@ -1,3 +1,7 @@
+<!--
+GameList component for the Tailspin Toys Crowd Funding platform.
+This component fetches and displays a list of games with loading states and error handling.
+-->
 <script lang="ts">
     import { onMount } from "svelte";
 
@@ -13,6 +17,12 @@
     let loading = true;
     let error: string | null = null;
 
+    /**
+     * Fetches games data from the API endpoint.
+     * Updates the component state with loading, error, or success states.
+     * 
+     * @returns Promise<void>
+     */
     const fetchGames = async () => {
         loading = true;
         try {

@@ -1,3 +1,7 @@
+"""
+Database seeding utilities for the Tailspin Toys Crowd Funding platform.
+This module provides functions to populate the database with sample game data.
+"""
 import csv
 import os
 import random
@@ -6,6 +10,12 @@ from models import db, Category, Game, Publisher
 from utils.database import init_db
 
 def create_app():
+    """
+    Create and configure Flask app for database operations.
+    
+    Returns:
+        Flask: Configured Flask application instance
+    """
     """Create and configure Flask app for database operations"""
     app = Flask(__name__)
 
@@ -15,6 +25,12 @@ def create_app():
     return app
 
 def create_games():
+    """
+    Create games, categories and publishers from CSV data for crowd funding platform.
+    
+    Reads game data from CSV file and creates corresponding database records
+    with appropriate relationships between games, categories, and publishers.
+    """
     """Create games, categories and publishers from CSV data for crowd funding platform"""
     app = create_app()
     
@@ -78,6 +94,11 @@ def create_games():
         print(f"Added {game_count} games with {len(categories)} categories and {len(publishers)} publishers")
 
 def seed_database():
+    """
+    Main function to seed the database with sample data.
+    
+    This function serves as the entry point for database seeding operations.
+    """
     create_games()
 
 if __name__ == '__main__':
