@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>數獨遊戲 (Sudoku Game)</h1>
+            <div class="controls">
+                <button id="newGame" class="btn btn-primary">新遊戲</button>
+                <button id="solveGame" class="btn btn-secondary">解答</button>
+                <button id="checkGame" class="btn btn-success">檢查</button>
+                <button id="clearGame" class="btn btn-danger">清空</button>
+            </div>
+            <div class="difficulty">
+                <label>難度：</label>
+                <select id="difficulty">
+                    <option value="easy">簡單</option>
+                    <option value="medium" selected>中等</option>
+                    <option value="hard">困難</option>
+                </select>
+            </div>
+        </header>
+
+        <main>
+            <div id="sudokuGrid" class="sudoku-grid"></div>
+            <div class="sidebar">
+                <div class="number-pad">
+                    <div class="number-title">選擇數字</div>
+                    <div class="numbers">
+                        <button class="number-btn" data-number="1">1</button>
+                        <button class="number-btn" data-number="2">2</button>
+                        <button class="number-btn" data-number="3">3</button>
+                        <button class="number-btn" data-number="4">4</button>
+                        <button class="number-btn" data-number="5">5</button>
+                        <button class="number-btn" data-number="6">6</button>
+                        <button class="number-btn" data-number="7">7</button>
+                        <button class="number-btn" data-number="8">8</button>
+                        <button class="number-btn" data-number="9">9</button>
+                        <button class="number-btn erase" data-number="0">清除</button>
+                    </div>
+                </div>
+                
+                <div class="game-info">
+                    <div class="timer">
+                        <span class="label">時間：</span>
+                        <span id="timeDisplay">00:00</span>
+                    </div>
+                    <div class="score">
+                        <span class="label">錯誤：</span>
+                        <span id="errorCount">0</span>
+                    </div>
+                </div>
+
+                <div class="instructions">
+                    <h3>遊戲規則</h3>
+                    <ul>
+                        <li>在9x9網格中填入數字1-9</li>
+                        <li>每行、每列、每個3x3區域內不能重複</li>
+                        <li>點擊格子選擇，再點擊數字填入</li>
+                        <li>完成所有格子即獲勝！</li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <div id="winModal" class="modal">
+            <div class="modal-content">
+                <h2>🎉 恭喜！你完成了數獨！</h2>
+                <p>完成時間：<span id="finalTime"></span></p>
+                <p>錯誤次數：<span id="finalErrors"></span></p>
+                <button id="newGameFromWin" class="btn btn-primary">再玩一局</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="sudoku.js"></script>
+</body>
+</html>
