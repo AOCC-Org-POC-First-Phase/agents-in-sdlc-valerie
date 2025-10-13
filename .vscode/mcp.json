@@ -10,6 +10,17 @@
       "env": {
         "NODE_ENV": "development"
       }
+    },
+    "notion": {
+      "command": "npx",
+      "args": ["-y", "mcp-remote", "https://mcp.notion.com/mcp"]
+    },
+    "figma": {
+      "command": "npx",
+      "args": ["figma-developer-mcp", "--stdio"],
+      "env": {
+        "FIGMA_API_KEY": ""
+      }
     }
   }
 }
