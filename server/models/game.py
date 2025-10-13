@@ -1,3 +1,7 @@
+"""
+Game model for the Tailspin Toys Crowd Funding platform.
+This module defines the Game entity with validation and relationship mapping.
+"""
 from . import db
 from .base import BaseModel
 from sqlalchemy.orm import validates, relationship
@@ -20,18 +24,50 @@ class Game(BaseModel):
     
     @validates('title')
     def validate_name(self, key, name):
+        """
+        Validates the game title field.
+        
+        Args:
+            key (str): The field name being validated
+            name (str): The title value to validate
+            
+        Returns:
+            str: The validated title value
+        """
         return self.validate_string_length('Game title', name, min_length=2)
     
     @validates('description')
     def validate_description(self, key, description):
+        """
+        Validates the game description field.
+        
+        Args:
+            key (str): The field name being validated
+            description (str): The description value to validate
+            
+        Returns:
+            str: The validated description value
+        """
         if description is not None:
             return self.validate_string_length('Description', description, min_length=10, allow_none=True)
         return description
     
     def __repr__(self):
+        """
+        Returns a string representation of the Game object.
+        
+        Returns:
+            str: String representation showing title and ID
+        """
         return f'<Game {self.title}, ID: {self.id}>'
 
     def to_dict(self):
+        """
+        Converts the Game object to a dictionary for JSON serialization.
+        
+        Returns:
+            dict: Dictionary containing game data with publisher and category info
+        """
         return {
             'id': self.id,
             'title': self.title,
