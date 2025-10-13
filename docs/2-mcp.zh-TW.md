@@ -206,6 +206,15 @@ Tips: 可以在 GitHub Pull Requests 的界面中, 看到目前的 Pull Requests
 
 請注意，設定過程與 GitHub MCP 伺服器類似，但您不需要提供任何憑證，如 GitHub 個人存取權杖。這是因為 Playwright MCP 伺服器不需要驗證來存取其功能。
 
+### 額外的 MCP 伺服器 - Notion 和 Figma
+
+我們還在此存儲庫中預先配置了 Notion 和 Figma MCP 伺服器，以擴展您的功能：
+
+- **Notion MCP 伺服器**：允許 GitHub Copilot 與您的 Notion 工作區互動、讀寫頁面、查詢資料庫等。
+- **Figma MCP 伺服器**：使 GitHub Copilot 能夠與 Figma 設計互動、從設計生成程式碼和檢查設計標記。
+
+有關詳細的設定說明，包括身份驗證步驟和使用範例，請參閱 [Notion 和 Figma MCP 設定指南](./notion-figma-mcp-setup.zh-TW.md)。
+
 ### 使用 Agent mode + playwright mcp 工具去搜尋資料
 ``` bash
 #playwright 幫我找 有關 github 的演講主題

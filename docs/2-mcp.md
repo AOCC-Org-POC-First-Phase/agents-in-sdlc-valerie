@@ -204,6 +204,15 @@ You can find the instructions for installing and configuring the Playwright MCP 
 
 Notice that the setup process is similar to the GitHub MCP server, but you do not need to provide any credentials like the GitHub Personal Access Token. This is because the Playwright MCP server does not require authentication to access its capabilities.
 
+### Additional MCP Servers - Notion and Figma
+
+We have also pre-configured Notion and Figma MCP servers in this repository to expand your capabilities:
+
+- **Notion MCP Server**: Allows GitHub Copilot to interact with your Notion workspace, read and write pages, query databases, and more.
+- **Figma MCP Server**: Enables GitHub Copilot to interact with Figma designs, generate code from designs, and inspect design tokens.
+
+For detailed setup instructions, including authentication steps and usage examples, please refer to the [Notion and Figma MCP Setup Guide](./notion-figma-mcp-setup.md).
+
 ## Resources
 
 - [What the heck is MCP and why is everyone talking about it?][mcp-blog-post]
